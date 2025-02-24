@@ -8,14 +8,14 @@ server:
 spring:
   autoconfigure:
     exclude:
-    - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
-    - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
-    - org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration
-    - org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration
-    - org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
-    - org.springframework.boot.autoconfigure.jooq.JooqAutoConfiguration
-    - org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthContributorAutoConfiguration
-    - org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration
+      - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration
+      - org.springframework.boot.autoconfigure.flyway.FlywayAutoConfiguration
+      - org.springframework.boot.autoconfigure.data.elasticsearch.ElasticsearchDataAutoConfiguration
+      - org.springframework.boot.autoconfigure.kafka.KafkaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jooq.JooqAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthContributorAutoConfiguration
+      - org.springframework.boot.actuate.autoconfigure.metrics.jdbc.DataSourcePoolMetricsAutoConfiguration
   main:
     allow-bean-definition-overriding: true
   profiles:
@@ -70,7 +70,7 @@ db:
       create-schemas: true
       outOfOrder: true
       locations: ${db.postgres.datasources.configs.flyway.locations}
-      ignoreMigrationPatterns: ''
+      ignoreMigrationPatterns: ""
   hikari:
     datasources:
       datasource:
@@ -90,24 +90,23 @@ db:
       idleTimeout: ${PG_IDLE_TIMEOUT:300000}
       leakDetectionThreshold: ${PG_LEAK_DETECTION_INTERVAL:30000}
       flyway: # shared (non-versioned) database
-        locations: 'classpath:db/migration/postgresql/static'
+        locations: "classpath:db/migration/postgresql/static"
         baselineOnMigrate: true
         schemas: ${spring.jpa.properties.hibernate.default_schema}
         defaultSchema: ${spring.jpa.properties.hibernate.default_schema}
         createSchemas: true
         outOfOrder: true
-        ignoreMigrationPatterns: ''
+        ignoreMigrationPatterns: ""
     datasources:
       configs:
         flyway: # shared (non-versioned) database
-          locations: 'classpath:db/migration/postgresql/configs'
+          locations: "classpath:db/migration/postgresql/configs"
           baselineOnMigrate: true
           schemas: ${spring.jpa.properties.hibernate.default_schema}
           defaultSchema: ${spring.jpa.properties.hibernate.default_schema}
           createSchemas: true
           outOfOrder: true
-          ignoreMigrationPatterns: ''
-
+          ignoreMigrationPatterns: ""
 
 consul:
   url: ${CONSUL_URL:http://consul:8500}

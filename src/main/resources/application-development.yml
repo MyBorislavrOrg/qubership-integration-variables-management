@@ -22,4 +22,3 @@ kubernetes:
 
 consul:
   url: ${CONSUL_URL:http://consul:8500}
-
