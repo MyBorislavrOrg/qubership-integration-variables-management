@@ -56,7 +56,7 @@
         <revision>0.1.2-adaptation-for-core-libs-SNAPSHOT</revision>
 
         <!-- BOMs -->
-        <cloud-core-java-bom.version>11.0.0-SNAPSHOT</cloud-core-java-bom.version>
+        <cloud-core-java-bom.version>11.0.0</cloud-core-java-bom.version>
         <spring-cloud-bom.version>2024.0.0</spring-cloud-bom.version>
         <jackson-bom.version>2.17.0</jackson-bom.version>
 
