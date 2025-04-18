@@ -18,9 +18,9 @@ on:
     - "README.md"
     - ".github/**"
   workflow_dispatch: {}
-permissions:
-  packages: write
-  contents: write
+#permissions:
+#  packages: write
+#  contents: write
 
 jobs:
   mvn-snapshot-deploy:
