@@ -18,13 +18,13 @@ on:
     - "README.md"
     - ".github/**"
   workflow_dispatch: {}
-#permissions:
-#  packages: write
-#  contents: write
+permissions:
+  packages: write
+  contents: write
 
 jobs:
   mvn-snapshot-deploy:
-    uses: netcracker/qubership-workflow-hub/.github/workflows/re-maven-snapshot-deploy.yaml@fix/maven-snapshot
+    uses: netcracker/qubership-workflow-hub/.github/workflows/re-maven-snapshot-deploy.yaml@main
     with:
       java-version: "21"
       additional-mvn-args: "-Dgpg.skip=true"
