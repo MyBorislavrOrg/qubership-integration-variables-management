@@ -27,7 +27,7 @@ jobs:
         with:
           java-version: '21'
           target-store: 'github'
-          additional-mvn-args: '-Dgpg.skip=true -Dskip.tests=true'
+          additional-mvn-args: '-Dgpg.skip=true -Dskip.tests=true -Pgithub'
           maven-username: ${{ github.actor }}
           maven-token: ${{ github.token }}
           gpg-private-key: ""
