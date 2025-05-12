@@ -1,0 +1,34 @@
+---
+# The workflow to deploy snapshot artifact versions to GitHub packages 
+# Fill free to adjust java version and additional mvn command-line parameters
+# The workflow will trigger on pushes into branches different from main and release
+# Please make sure that the version in the pom.xml file has the SNAPSHOT postfix
+
+name: Maven GitHub deploy snapshot
+
+on:
+  push:
+    branches-ignore:
+      - "main"
+      - "**release*"
+      - "prettier/**"
+  workflow_dispatch:
+permissions:
+  packages: write
+
+jobs:
+  mvn-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v4
+      - name: "Deploy"
+        uses: netcracker/qubership-workflow-hub/actions/maven-snapshot-deploy@feature/maven-snapshot-action
+        with:
+          java-version: '21'
+          target-store: 'github'
+          additional-mvn-args: '-Dgpg.skip=true -Dskip.tests=true'
+          maven-username: ${{ github.actor }}
+          maven-token: ${{ github.token }}
+          gpg-private-key: ""
+          gpg-passphrase: ""
