@@ -25,7 +25,7 @@
     <scm>
         <connection>scm:git:https//github.com/myborislavrorg/qubership-integration-variables-management.git</connection>
         <developerConnection>scm:git:https://github.com/myborislavrorg/qubership-integration-variables-management.git</developerConnection>
-        <url>scm:git:https://github.com/myborislavrorg/qubership-integration-variables-management/tree/main</url>
+        <url>scm:git:https://github.com/myborislavrorg/qubership-integration-variables-management.git</url>
       <tag>HEAD</tag>
   </scm>
 
