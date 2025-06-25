@@ -1,35 +1,7 @@
-# Maven
-target/
-logs/
-
-# Eclipse
-bin/
-.classpath
-.project
-.settings/
-.springBeans
-.pmd
-.ruleset
-.factorypath
-
-# IDEA
-.idea/
-*.iml
-
-# Cassandra
-.toDelete
-
-# JPA buddy
-.jpb
-
-# NetBeans
-**/nbactions.xml
-**/nbactions.tmp
-**/nb-configuration.xml
-**/15/
-
-**/generated-sources/
-**/swagger.json
-
-**/.flattened-pom.xml
-.flattened-pom.xml
+.vscode
+.idea
+node_modules
+.DS_Store
+dist
+coverage
+.env
